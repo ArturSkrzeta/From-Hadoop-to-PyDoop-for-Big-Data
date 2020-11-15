@@ -2,6 +2,12 @@
 ### Hadoop installation
 1. Download it form hadoop.apache.org.
 2. Unizp to folder on C driver.
+3. Rename directory to hadoop.
+4. Create dictionary in hadoop.
+```
+.\data\datanode
+.\data\namenode
+```
 3. Go to file core-site.xml and add below:
 ```
 <configuration>
@@ -27,13 +33,29 @@
     <name>yarn.nodemanagaer.aux-services</name>
     <value>mapreduce_shuffle</value>
   </property>
-    <property>
+  <property>
     <name>yarn.nodemanager.auxservices.mapreduce.shuffle.class</name>
     <value>org.apache.hadoop.mapred.ShuffleHandler</value>
   </property>
 </configuration>
 ```
-6. hdfs-site.xml
+6. Go to hdfs-site.xml and add below:
+```
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>C:\hadoop\data\namenode</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>C:\hadoop\data\datanode</value>
+  </property>
+</configuration>
+```
 7. hadoop-env.cmd
 
 
