@@ -2,7 +2,15 @@
 ### Hadoop installation
 1. Download it form hadoop.apache.org.
 2. Unizp to folder on C driver.
-3. Go to file core-site.xml
+3. Go to file core-site.xml and add below:
+```
+<configuration>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://localhost:9000</value>
+  </property>
+</configuration>
+```
 4. Go to file mapred-site.xml
 5. yarn-site.xml
 6. hdfs-site.xml
