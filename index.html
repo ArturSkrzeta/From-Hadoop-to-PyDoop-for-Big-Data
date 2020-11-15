@@ -68,21 +68,43 @@
 												- Mapper - maps each line of raw data into key-valye paris,<br>
 												- Reducer - aggregates values for the same keys.
 											</li>
-											<li>Mapper:
-												<br>
-												<code>Mapping: each line -> (key, value) e.g.:</code><br>
-												<code>((category,status), 1))</code><br>
-												- where (category,status) is a key and 1 is a value
+										</ul>
+
+										<h5>Workflow:</h5>
+										<ul>
+											<li>Mapping text:<br>
+												<code>'John likes to watch movies. Mary likes movies too.'</code><br>
+												by splitting words and assigning 1 values to each, getting (key, valye) paris:<br>
+												<code>John, 1</code><br>
+												<code>likes, 1</code><br>
+												<code>to, 1</code><br>
+												<code>watch, 1</code><br>
+												<code>movies, 1</code><br>
+												<code>Mary, 1</code><br>
+												<code>likes, 1</code><br>
+												<code>movies, 1</code><br>
+												<code>too, 1</code>
 											</li>
-											<li>Reducer:
-												<br>
-												<code>line 1: ((key_part_1, key_part_2), 1) </code><br>
-												<code>line 2: ((key_part_1, key_part_2), 1) </code><br>
-												- for both lines the key are consisted with to parts<br>
-												- for both lines the key are the same<br>
-												<code>aggregating both lines: ((key_part_1, key_part_2), <span style="color: #70ff88">2</span>)</code>
+											<li>Shuffling and sorting key, value pairs:<br>
+												<code>John, 1</code><br>
+												<code>likes, (1,1)</code><br>
+												<code>to, 1</code><br>
+												<code>watch, 1</code><br>
+												<code>movies, (1,1)</code><br>
+												<code>Mary, 1</code><br>
+												<code>too, 1</code>
+											</li>
+											<li>Reducing pairs by key name:<br>
+												<code>(John, 1)</code><br>
+												<code>(likes, 2)</code><br>
+												<code>(to, 1)</code><br>
+												<code>(watch, 1)</code><br>
+												<code>(movies, 2)</code><br>
+												<code>(Mary, 1)</code><br>
+												<code>(too, 1)</code>
 											</li>
 										</ul>
+
 									</header>
 								</div>
 							</section>
@@ -103,9 +125,21 @@
 							<section id="three">
 								<div class="container">
 									<h3>Demo</h3>
-									<h5>...</h5>
+									<h5>MapReduce:</h5>
 									<ul>
-										<li>...</li>
+										<li>Mapper:
+											<br>
+											<code>Mapping: each line -> (key, value) e.g.:</code><br>
+											<code>((category,status), 1))</code><br>
+											- where (category,status) is a key and 1 is a value
+										</li>
+										<li>Reducer:
+											<br>
+											<code>line 1: ((key_part_1, key_part_2), 1) </code><br>
+											<code>line 2: ((key_part_1, key_part_2), 1) </code><br>
+											- for both lines the key are consisted with to parts<br>
+											- for both lines the key are the same<br>
+											<code>aggregating both lines: ((key_part_1, key_part_2), <span style="color: #70ff88">2</span>)</code>
 									</ul>
 								</div>
 							</section>
