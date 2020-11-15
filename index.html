@@ -65,7 +65,18 @@
 											<li>MapReduce - mechnizm responsible for processing data. It consists of 2 components:
 												<br>
 												- Mapper - maps each line of raw data into key-valye paris,<br>
-												- Reducer -.
+												- Reducer - aggregates values for the same keys.
+											</li>
+											<li>Mapper:
+												<br>
+												<code>Mapping: each line -> (key, value) e.g.:</code><br>
+												<code>((category,status), 1)) where (category,status) is a key and 1 is a value</code>
+											</li>
+											<li>Reducer:
+												<br>
+												<code>pair from one line: ((key_1, value_1), 1) </code><br>
+												<code>pair from another line: ((key_1, value_1), 1) </code><br>
+												<code>aggregating both lines: ((key_1, value_1), 2)</code>
 											</li>
 										</ul>
 									</header>
