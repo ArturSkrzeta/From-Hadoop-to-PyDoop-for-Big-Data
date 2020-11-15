@@ -80,8 +80,11 @@ C:\hadoop\sbin
 ```
 C:\hadoop\sbin>start-all.cmd
 ```
-13. You can check hdfs (namenode and datanode) under port:
+13. You can check HDFS (namenode and datanode) under port:
 ```
 http://localhost:9870
 ```
-
+14. Making directions in HDFS:
+```
+hdfs dfs -mkdir /dir_name
+```
