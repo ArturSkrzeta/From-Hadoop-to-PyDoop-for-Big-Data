@@ -70,3 +70,4 @@ C:\hadoop\bin
 C:\hadoop\bin
 C:\hadoop\sbin
 ```
+10. Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar
