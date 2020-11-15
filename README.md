@@ -48,7 +48,7 @@
   </property>
   <property>
     <name>dfs.namenode.name.dir</name>
-    <value>C:\hadoop\data\namenode</value>
+    <value>file:/C:/hadoop/data/namenode</value>
   </property>
   <property>
     <name>dfs.datanode.data.dir</name>
