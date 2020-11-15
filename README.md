@@ -11,7 +11,15 @@
   </property>
 </configuration>
 ```
-4. Go to file mapred-site.xml
+4. Go to file mapred-site.xml and add below:
+```
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+</configuration>
+```
 5. yarn-site.xml
 6. hdfs-site.xml
 7. hadoop-env.cmd
