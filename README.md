@@ -65,4 +65,8 @@ set JAVA_HOME=C:\jdk1.8.0_261
 HADOOP_HOME
 C:\hadoop\bin
 ```
-9. Add C:\hadoop\bin to system environment variables as well.
+9. Add below dirs to environment variables for system:
+```
+C:\hadoop\bin
+C:\hadoop\sbin
+```
