@@ -80,19 +80,19 @@ C:\hadoop\sbin
 ```
 C:\hadoop\sbin>start-all.cmd
 ```
-13. You can check HDFS (namenode and datanode) under port:
+15. You can check HDFS (namenode and datanode) under port:
 ```
 http://localhost:9870
 ```
-15. Making directions in HDFS:
+16. Making directions in HDFS:
 ```
 hdfs dfs -mkdir /dir_name
 ```
-16. Listing all directories in HDFS:
+17. Listing all directories in HDFS:
 ```
 hdfs dfs –ls /
 ```
-17. Copying local files into HDFS
+18. Copying local files into HDFS
 ```
 hdfs dfs -copyFromLocal ‪C:\Users\U742905\Downloads\test.txt /sample
 ```
