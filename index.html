@@ -61,6 +61,7 @@
 										<h5>Hadoop architecture:</h5>
 										<ul>
 										  <li>Hadoop Distributed File System (HDFS) - responsible for data sotrage across multiple clusters (machines).</li>
+											<li>There is also Local FS when you want to run your code on local single machine.</li>
 											<li>Hadoop YARN (Yet Another Resource Negotiator) -  cluster manager that manages resources splitting tasks across processors of clusters.</li>
 											<li>MapReduce - mechnizm responsible for processing data. It consists of 2 components:
 												<br>
@@ -70,13 +71,16 @@
 											<li>Mapper:
 												<br>
 												<code>Mapping: each line -> (key, value) e.g.:</code><br>
-												<code>((category,status), 1)) where (category,status) is a key and 1 is a value</code>
+												<code>((category,status), 1))</code><br>
+												- where (category,status) is a key and 1 is a value
 											</li>
 											<li>Reducer:
 												<br>
-												<code>pair from one line: ((key_1, value_1), 1) </code><br>
-												<code>pair from another line: ((key_1, value_1), 1) </code><br>
-												<code>aggregating both lines: ((key_1, value_1), 2)</code>
+												<code>line 1: ((key_part_1, key_part_2), 1) </code><br>
+												<code>line 2: ((key_part_1, key_part_2), 1) </code><br>
+												- for both lines the key are consisted with to parts<br>
+												- for both lines the key are the same<br>
+												<code>aggregating both lines: ((key_part_1, key_part_2), <span style="color: #70ff88">2</span>)</code>
 											</li>
 										</ul>
 									</header>
@@ -111,9 +115,113 @@
 							<section id="four">
 								<div class="container">
 									<h3>Setup</h3>
-									<p>Hadoop installation reuired:</p>
-									<p>Python libraries required:</p>
+									<h5>Python libraries required:</h5>
+									<ul>
+										<li>...</li>
+									</ul>
+									<h5>Hadoop installation reuired:</h5>
+									<ol>
 
+										<li>Download it form hadoop.apache.org.</li>
+										<li>Unizp to folder on C driver.</li>
+										<li>Rename directory to hadoop.</li>
+
+										<li>Create dictionary in hadoop:
+											<br>
+											<code>.\data\datanode</code><br>
+											<code>.\data\namenode</code>
+										</li>
+
+										<li>Go to file core-site.xml and add below:<br>
+											<code>&ltconfiguration&gt</code><br>&nbsp&nbsp&nbsp
+											  <code>&ltproperty&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+											    <code>&ltname&gtfs.defaultFS&lt/name&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+											    <code>&ltvalue&gthdfs://localhost:9000&lt/value&gt</code><br>&nbsp&nbsp&nbsp
+											  <code>&lt/property&gt</code><br>
+											<code>&lt/configuration&gt</code>
+										</li>
+
+										<li>Go to file mapred-site.xml and add below:<br>
+											<code>&ltconfiguration&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&ltproperty&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltname&gtmapreduce.framework.name&lt/name&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltvalue&gtyarn&lt/value&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&lt/property&gt</code><br>
+											<code>&lt/configuration&gt</code>
+										</li>
+
+										<li>Go to yarn-site.xml and add below:<br>
+											<code>&ltconfiguration&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&ltproperty&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltname&gtyarn.nodemanagaer.aux-services&lt/name&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltvalue&gtmapreduce_shuffle&lt/value&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&lt/property&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&ltproperty&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltname&gtyarn.nodemanager.auxservices.mapreduce.shuffle.class&lt/name&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltvalue&gtorg.apache.hadoop.mapred.ShuffleHandler&lt/value&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&lt/property&gt</code><br>
+											<code>&lt/configuration&gt</code>
+										</li>
+
+										<li>Go to hdfs-site.xml and add below:<br>
+											<code>&ltconfiguration&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&ltproperty&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltname&gtdfs.replication&lt/name&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltvalue&gt1&lt/value&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&lt/property&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&ltproperty&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltname&gtdfs.namenode.name.dir&lt/name&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltvalue&gtfile:/C:/hadoop/data/namenode&lt/value&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&lt/property&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&ltproperty&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltname&gtdfs.datanode.data.dir&lt/name&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>&ltvalue&gtC:\hadoop\data\datanode&lt/value&gt</code><br>&nbsp&nbsp&nbsp
+												<code>&lt/property&gt</code><br>
+											<code>&lt/configuration&gt</code>
+										</li>
+
+										<li>Go to hadoop-env.cmd and update below:<br>
+											<code>set JAVA_HOME=C:\jdk1.8.0_261</code>
+										</li>
+
+										<li>Add Hadoop directory to environment variables for user:<br>
+											<code>HADOOP_HOME</code><br>
+											<code>C:\hadoop\bin</code>
+										</li>
+
+										<li>Add below dirs to environment variables for system:<br>
+											<code>C:\hadoop\bin</code><br>
+											<code>C:\hadoop\sbin</code>
+										</li>
+
+										<li>Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar.</li>
+
+										<li>Go to CMD and check if it works with command:<br>
+											<code>hadoop version</code><br>
+											<code>hdfs namenode -format</code>
+										</li>
+
+										<li>Run Hadoop with command:<br>
+											<code>C:\hadoop\sbin>start-all.cmd</code>
+										</li>
+
+										<li>You can check HDFS (namenode and datanode) under port:<br>
+											<code>http://localhost:9870</code>
+										</li>
+
+										<li>Making directions in HDFS:<br>
+											<code>hdfs dfs -mkdir /dir_name</code>
+										</li>
+
+										<li>Listing all directories in HDFS:<br>
+											<code>hdfs dfs –ls /</code>
+										</li>
+
+										<li>Copying local files into HDFS<br>
+											<code>hdfs dfs -copyFromLocal ‪C:\Users\U742905\Downloads\test.txt /sample</code>
+										</li>
+
+									</ol>
 								</div>
 							</section>
 
