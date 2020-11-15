@@ -71,3 +71,7 @@ C:\hadoop\bin
 C:\hadoop\sbin
 ```
 10. Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar
+11. Go to CMD and check if it works with command:
+```
+hdfs namenode -format
+```
