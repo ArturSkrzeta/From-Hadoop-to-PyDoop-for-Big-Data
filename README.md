@@ -8,7 +8,7 @@
 .\data\datanode
 .\data\namenode
 ```
-3. Go to file core-site.xml and add below:
+5. Go to file core-site.xml and add below:
 ```
 <configuration>
   <property>
@@ -17,7 +17,7 @@
   </property>
 </configuration>
 ```
-4. Go to file mapred-site.xml and add below:
+6. Go to file mapred-site.xml and add below:
 ```
 <configuration>
   <property>
@@ -26,7 +26,7 @@
   </property>
 </configuration>
 ```
-5. Go to yarn-site.xml and add below:
+7. Go to yarn-site.xml and add below:
 ```
 <configuration>
   <property>
@@ -39,7 +39,7 @@
   </property>
 </configuration>
 ```
-6. Go to hdfs-site.xml and add below:
+8. Go to hdfs-site.xml and add below:
 ```
 <configuration>
   <property>
@@ -56,27 +56,27 @@
   </property>
 </configuration>
 ```
-7. Go to hadoop-env.cmd and update below:
+9. Go to hadoop-env.cmd and update below:
 ```
 set JAVA_HOME=C:\jdk1.8.0_261
 ```
-8. Add Hadoop directory to environment variables for user:
+10. Add Hadoop directory to environment variables for user:
 ```
 HADOOP_HOME
 C:\hadoop\bin
 ```
-9. Add below dirs to environment variables for system:
+11. Add below dirs to environment variables for system:
 ```
 C:\hadoop\bin
 C:\hadoop\sbin
 ```
-10. Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar.
-11. Go to CMD and check if it works with command:
+12. Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar.
+13. Go to CMD and check if it works with command:
 ```
 >hadoop version
 >hdfs namenode -format
 ```
-12. Run Hadoop with command:
+14. Run Hadoop with command:
 ```
 C:\hadoop\sbin>start-all.cmd
 ```
@@ -84,11 +84,15 @@ C:\hadoop\sbin>start-all.cmd
 ```
 http://localhost:9870
 ```
-14. Making directions in HDFS:
+15. Making directions in HDFS:
 ```
 hdfs dfs -mkdir /dir_name
 ```
-15. Copying local files into HDFS
+16. Listing all directories in HDFS:
+```
+hdfs dfs –ls /
+```
+17. Copying local files into HDFS
 ```
 hdfs dfs -copyFromLocal ‪C:\Users\U742905\Downloads\test.txt /sample
 ```
