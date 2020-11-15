@@ -88,3 +88,7 @@ http://localhost:9870
 ```
 hdfs dfs -mkdir /dir_name
 ```
+15. Copying local files into HDFS
+```
+hdfs dfs -copyFromLocal ‪C:\Users\U742905\Downloads\test.txt /sample
+```
