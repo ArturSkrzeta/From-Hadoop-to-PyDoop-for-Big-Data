@@ -79,3 +79,8 @@ hdfs namenode -format
 ```
 C:\hadoop\sbin>start-all.cmd
 ```
+13. You can check Hadoop on localhost:
+```
+http://localhost:9870.
+```
+
