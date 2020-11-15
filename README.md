@@ -20,7 +20,19 @@
   </property>
 </configuration>
 ```
-5. yarn-site.xml
+5. Go to yarn-site.xml and add below:
+```
+<configuration>
+  <property>
+    <name>yarn.nodemanagaer.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+    <property>
+    <name>yarn.nodemanager.auxservices.mapreduce.shuffle.class</name>
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+</configuration>
+```
 6. hdfs-site.xml
 7. hadoop-env.cmd
 
