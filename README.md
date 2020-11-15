@@ -73,7 +73,8 @@ C:\hadoop\sbin
 10. Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar.
 11. Go to CMD and check if it works with command:
 ```
-hdfs namenode -format
+>hadoop version
+>hdfs namenode -format
 ```
 12. Run Hadoop with command:
 ```
