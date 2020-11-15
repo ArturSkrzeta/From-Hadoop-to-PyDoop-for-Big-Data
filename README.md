@@ -56,6 +56,9 @@
   </property>
 </configuration>
 ```
-7. hadoop-env.cmd
+7. Go to hadoop-env.cmd and update below:
+```
+set JAVA_HOME=C:\jdk1.8.0_261
+```
 
 
