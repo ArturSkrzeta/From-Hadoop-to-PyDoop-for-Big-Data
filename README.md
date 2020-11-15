@@ -3,7 +3,7 @@
 1. Download it form hadoop.apache.org.
 2. Unizp to folder on C driver.
 3. Rename directory to hadoop.
-4. Create dictionary in hadoop.
+4. Create dictionary in hadoop:
 ```
 .\data\datanode
 .\data\namenode
@@ -70,7 +70,7 @@ C:\hadoop\bin
 C:\hadoop\bin
 C:\hadoop\sbin
 ```
-10. Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar
+10. Replace C:\hadoop\bin with bin from HadoopConfiguration-FIXbin.rar.
 11. Go to CMD and check if it works with command:
 ```
 hdfs namenode -format
