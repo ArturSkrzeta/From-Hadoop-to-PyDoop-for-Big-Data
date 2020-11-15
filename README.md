@@ -80,7 +80,7 @@ C:\hadoop\sbin
 ```
 C:\hadoop\sbin>start-all.cmd
 ```
-13. You can check Hadoop on localhost:
+13. You can check hdfs (namenode and datanode) under port:
 ```
 http://localhost:9870
 ```
