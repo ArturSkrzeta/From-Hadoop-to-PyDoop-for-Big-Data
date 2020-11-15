@@ -75,3 +75,7 @@ C:\hadoop\sbin
 ```
 hdfs namenode -format
 ```
+12. Run Hadoop with command:
+```
+C:\hadoop\sbin>start-all.cmd
+```
