@@ -49,9 +49,76 @@
 										<h2>From Hadoop to PyDoop for Big Data</h2>
 										<h3>Intro</h3>
 
-										<h5>Hadoop application:</h5>
+										<p>In this section I compare Data Warehouse and Big Data. Further I focuse on Big Data available technology.</p>
+
+										<h5>Data Warehouse:</h5>
 										<ul>
-											<li>Opensource software using local machine or network of machines to solve massive data problems efficiently.</li>
+											<li>Is the architecture of gaining the information by:
+												<br>
+												1. Extracting data from one or more homogeneous or heterogeneous data sources.<br>
+												2. Transforming the data.<br>
+												3. Loading that into a data repository.<br>
+												4. Doing data analysis.<br>
+												5. Making business decisions.<br>
+												6. Further reporting.<br>
+											 </li>
+											 <li>Data repository generated from the process as above is nothing but the data warehouse.</li>
+										</ul>
+
+										<h5>Big Data:</h5>
+										<ul>
+											<li>Stands on 3Vs:
+												<br>
+												- <b>Volume</b> which defines amount of data coming from different sources.<br>
+												- <b>Velocity</b> which refers to the speed of data processing.<br>
+												- <B>Variety</b> which stands for a numerous of data types.
+											</li>
+											<li>Comparison to Data Warehouse:
+												<br><br>
+												<table>
+													<thead>
+														<tr>
+															<th>Big Data</th>
+															<th>Data Warehouse</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>A technology to store and manage large amounts of data.</td>
+															<td>An architecture of consolidating and organizing data to give a single version of the truth.</td>
+														</tr>
+														<tr>
+															<td>The purpose of storing data is not defined in advance.</td>
+															<td>Designed with clear intention to make informed decisions</td>
+														</tr>
+														<tr>
+															<td>noSQL data storage.</td>
+															<td>Relies on SQL.</td>
+														</tr>
+														<tr>
+															<td>Structured, non-structured or semi-structured data.</td>
+															<td>Only structured data.</td>
+														</tr>
+														<tr>
+															<td>Even houndreds of data sources.</td>
+															<td>Several data sources possible.</td>
+														</tr>
+														<tr>
+															<td>Takes real-time data streams as an input.</td>
+															<td>Takes data batches as an input.</td>
+														</tr>
+														<tr>
+															<td>ELT - ingest, organize, store.</td>
+															<td>ETL - ingest, store, organize later.</td>
+														</tr>
+													</tbody>
+												</table>
+											</li>
+										</ul>
+
+										<h5>Hadoop as Big Data technology:</h5>
+										<ul>
+											<li>Open-source software using local machine or network of machines to solve big data problems efficiently.</li>
 											<li>Distributed storage and distributed processing of big datasets on computer cluster(s).</li>
 											<li>Processing data in parallel manner setting CPUs (processors) of all clusters to process data in parallel.</li>
 											<li>Hadoop framework is written in Java programming language - requires Java installation when setting up.</li>
@@ -60,10 +127,10 @@
 
 										<h5>Hadoop architecture:</h5>
 										<ul>
-										  <li>Hadoop Distributed File System (HDFS) - responsible for data sotrage across multiple clusters (machines).</li>
+										  <li><b>Hadoop Distributed File System (HDFS)</b> - responsible for data sotrage across multiple clusters (machines).</li>
 											<li>There is also Local FS when you want to run your code on local single machine.</li>
-											<li>Hadoop YARN (Yet Another Resource Negotiator) -  cluster manager that manages resources splitting tasks across processors of clusters.</li>
-											<li>MapReduce - mechnizm responsible for processing data. It consists of 2 components:
+											<li><B>Hadoop YARN (Yet Another Resource Negotiator)</b> -  cluster manager that manages resources splitting tasks across processors of clusters.</li>
+											<li><b>MapReduce</b> - mechnizm responsible for processing data. It consists of 2 components:
 												<br>
 												- Mapper - maps each line of raw data into key-valye paris,<br>
 												- Reducer - aggregates values for the same keys.
