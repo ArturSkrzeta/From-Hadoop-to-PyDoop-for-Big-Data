@@ -202,7 +202,22 @@
 											<li>Each of additional packages provides richer user interface on top of Hadoop that facilitates building MapReduce models with non-Java languages for instance: SQL like language (Apache Hive, Apache Pig) or pure Python (PySpark extending Apache Spark).</li>
 										</ul>
 
-
+										<h5>Apache Hive:</h5>
+										<ul>
+											<li>Gives an SQL-like interface (HiveQL) to query data stored in various databases and file systems that integrate with Hadoop.</li>
+											<li>Hive integrates HiveQL into the underlying Java without the need to implement queries in the low-level Java API.</li>
+											<li>In short, user sends HiveQL queries which are converted to MapReduce tasks thata are consumed by Hadoop MapReduce system.</li>
+											<li>Hive architecture:
+												<br>
+												<img src="images/hive.JPG" width="640"><span style="font-size:12px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsource: simplilearn</span>
+												<br>
+												- Hive client supports different client applications in different laguages for sending queries.<br>
+												- Hive client's request are being send to Hive server. Queries can be executed with using Hive Web Interface of CLI.<br>
+												- Hive driver is responsible for all the queries that were submitted. It passes query to compiler that checks it, then passes to optimizer that optimizes execution plan, and gives query to executor.<br>
+												- Metastore is a repository for Hive metadata.<br>
+												- MapReduce is being used to process the query on top og HDFS.
+											</li>
+										</ul>
 
 									</header>
 								</div>
