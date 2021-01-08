@@ -223,13 +223,23 @@
 												<br>
 												- execution engine acts like a bridge between Hive and Hadoop to process a query.
 											</li>
+											<li>Hive's data model:
+												<br>
+												- Tabels like in relational db.<br>
+												- Partitions that group tables of the same kind of data due to partition key.<br>
+												- Buckets where partitions are devided for a better quering.
+											</li>
+											<li>Hive's execution modes:
+												<br>
+												- Local Mode - when the data is small or one datanode present. Often used for testing before processing big data loads.<br>
+												- MapReduce Mode - when multiple datanodes work and large data needs to be processed.
+											</li>
 											<li>Hive's strong point:
 												<br>
 												- even though it's non-realtional data storage, data is being kept in form of tables,<br>
 												- takes a Java knowledge off a user,<br>
 												- we can access data with SQL-like lanugage instead of coding scripts,<br>
 												- data can be queried by multipole users at the same time,<br>
-												- support unstrucured data with different formats,<br>
 												- scalable at low cost,<br>
 												- write once and read many times,<br>
 												- data size in petabytes.
