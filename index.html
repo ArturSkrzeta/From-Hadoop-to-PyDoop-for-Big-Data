@@ -127,11 +127,15 @@
 
 										<h5>Hadoop as Big Data technology:</h5>
 										<ul>
-											<li>Open-source software using local machine or network of machines to solve big data problems efficiently.</li>
-											<li>Distributed storage and distributed processing of big datasets on computer cluster(s).</li>
-											<li>Processing data in parallel manner setting CPUs (processors) of all clusters to process data in parallel.</li>
-											<li>Hadoop framework is written in Java programming language - requires Java installation when setting up.</li>
+											<li>Open-source software using local machine or network of machines to solve big data problems efficiently using the MapReduce programming model.</li>
+											<li>Distributed storage and distributed processing of big datasets on computer (nodes) cluster(s).</li>
+											<li>Distributed storage means that Hadoop splits files into large blocks and distributes them across nodes in a cluster.
+													Hadoop then transfers compressed code into nodes to process data in parallel.
+													In this system, a single node process only data data that has access to.
+											</li>
+											<li>Overall processing data runs in parallel manner setting CPUs (processors) of all nodes in the clusters to process data in parallel.</li>
 											<li>With its built-in mechanizms, keeps backuping the data up and retriving once some cluster fails.</li>
+											<li>Hadoop framework is written in Java programming language - requires Java installation when setting up.</li>
 										</ul>
 
 										<h5>Hadoop architecture:</h5>
@@ -150,7 +154,7 @@
 											</li>
 										</ul>
 
-										<h5>Workflow:</h5>
+										<h5>MapReduce workflow:</h5>
 										<ul>
 											<li>Mapping text:<br>
 												<code>'John likes to watch movies. Mary likes movies too.'</code><br>
@@ -184,6 +188,8 @@
 												<code>(too, 1)</code>
 											</li>
 										</ul>
+
+
 
 									</header>
 								</div>
